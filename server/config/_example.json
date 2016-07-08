@@ -1,0 +1,10 @@
+{
+  "mode": "test",
+  "port": 3080,
+  "intervalSeconds": 300,
+  "database": {
+    "username": "username",
+    "password": "supersecret",
+    "database": "waittimes"
+  }
+}
