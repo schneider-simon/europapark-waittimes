@@ -5,6 +5,8 @@ var config = {
 
 var express = require('express');
 var Sniffer = require("./classes/Sniffer");
+var models = require("./domain/models");
+
 var app = express();
 
 var sniffer = new Sniffer(config.mode);
@@ -17,11 +19,14 @@ setInterval(() => {
 }, config.intervalSeconds * 1000);
 
 app.get('/results', function (req, res) {
-    Waittime.all().then(function(times){
+    models.waitTime.all().then(function(times){
         res.send(JSON.stringify(times));
     });
 });
 
+app.use(express.static('./../public'));
+
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
+
