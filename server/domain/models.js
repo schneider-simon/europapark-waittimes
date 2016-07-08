@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-var database = require('./../services/database');
+var database = require('././database');
 
 module.exports = {
     waitTime: database.define('wait_time', {
