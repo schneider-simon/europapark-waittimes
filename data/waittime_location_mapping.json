@@ -1,88 +1,89 @@
 {
-  "mapping": [
-    {
-      "park_plan_code": 853,
-	  "location_id": "122"
-    },
-    {
-      "park_plan_code": 850,
-      "location_id": "114"
-    },
-    {
-      "park_plan_code": 250,
-      "location_id": "119"
-    },
-    {
-      "park_plan_code": 200,
-      "location_id": "127"
-    },
-    {
-      "park_plan_code": 500,
-      "location_id": "121"
-    },
-    {
-      "park_plan_code": 701,
-      "location_id": "113"
-    },
-    {
-      "park_plan_code": 351,
-      "location_id": "115"
-    },
-    {
-      "park_plan_code": 403,
-      "location_id": "116"
-    },
-    {
-      "park_plan_code": 700,
-      "location_id": "120"
-    },
-    {
-      "park_plan_code": 800,
-      "location_id": "107"
-    },
-    {
-      "park_plan_code": 400,
-      "location_id": "117"
-    },
-    {
-      "park_plan_code": 650,
-      "location_id": "185"
-    },
-    {
-      "park_plan_code": 350,
-      "location_id": "118"
-    },
-    {
-      "park_plan_code": 851,
-      "location_id": "193"
-    },
-    {
-      "park_plan_code": 404,
-      "location_id": "136"
-    },
-    {
-      "park_plan_code": 100,
-      "location_id": "130"
-    },
-    {
-      "park_plan_code": 550,
-      "location_id": "132"
-    },
-    {
-      "park_plan_code": 201,
-      "location_id": "135"
-    },
-    {
-      "park_plan_code": 202,
-      "location_id": "239"
-    },
-    {
-      "park_plan_code": 102,
-      "location_id": "140"
-    },
-    {
-      "park_plan_code": 900,
-      "location_id": "559"
-    }
-  ]
+	"machine_mapping": {
+		"100": "130",
+		"102": "140",
+		"200": "127",
+		"201": "135",
+		"202": "239",
+		"250": "119",
+		"350": "118",
+		"351": "115",
+		"400": "117",
+		"403": "116",
+		"404": "136",
+		"500": "121",
+		"550": "132",
+		"650": "185",
+		"700": "120",
+		"701": "113",
+		"800": "107",
+		"850": "114",
+		"851": "193",
+		"853": "122",
+		"900": "559"
+	},
+	"mapping": [{
+		"park_plan_code": 853,
+		"location_id": "122"
+	}, {
+		"park_plan_code": 850,
+		"location_id": "114"
+	}, {
+		"park_plan_code": 250,
+		"location_id": "119"
+	}, {
+		"park_plan_code": 200,
+		"location_id": "127"
+	}, {
+		"park_plan_code": 500,
+		"location_id": "121"
+	}, {
+		"park_plan_code": 701,
+		"location_id": "113"
+	}, {
+		"park_plan_code": 351,
+		"location_id": "115"
+	}, {
+		"park_plan_code": 403,
+		"location_id": "116"
+	}, {
+		"park_plan_code": 700,
+		"location_id": "120"
+	}, {
+		"park_plan_code": 800,
+		"location_id": "107"
+	}, {
+		"park_plan_code": 400,
+		"location_id": "117"
+	}, {
+		"park_plan_code": 650,
+		"location_id": "185"
+	}, {
+		"park_plan_code": 350,
+		"location_id": "118"
+	}, {
+		"park_plan_code": 851,
+		"location_id": "193"
+	}, {
+		"park_plan_code": 404,
+		"location_id": "136"
+	}, {
+		"park_plan_code": 100,
+		"location_id": "130"
+	}, {
+		"park_plan_code": 550,
+		"location_id": "132"
+	}, {
+		"park_plan_code": 201,
+		"location_id": "135"
+	}, {
+		"park_plan_code": 202,
+		"location_id": "239"
+	}, {
+		"park_plan_code": 102,
+		"location_id": "140"
+	}, {
+		"park_plan_code": 900,
+		"location_id": "559"
+	}]
 }
