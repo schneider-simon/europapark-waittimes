@@ -9,8 +9,11 @@
   "author": "trigg3r",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.13.1",
     "moment": "^2.14.1",
     "moment-timezone": "^0.5.4",
-    "request": "^2.72.0"
+    "mysql": "^2.11.1",
+    "request": "^2.72.0",
+    "sequelize": "^3.23.4"
   }
 }
