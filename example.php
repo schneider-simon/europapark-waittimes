@@ -7,4 +7,4 @@ $time = time();
 $date = date('YmdHi', $time);
 $callUrl = EP_WT_URL . '?code=' . md5('Europa-Park' . $date . 'SecondTry') . '&v=4&base=' . $time;
 
-echo file_get_contents($callUrl);
+echo $callUrl;
