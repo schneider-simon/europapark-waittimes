@@ -1,0 +1,131 @@
+{
+    "success": true,
+    "results": [
+        {
+            "code": 853,
+            "time": 1,
+            "type": 1,
+            "infostele": true
+        },
+        {
+            "code": 850,
+            "time": 1,
+            "type": 1,
+            "infostele": true
+        },
+        {
+            "code": 250,
+            "time": 1,
+            "type": 1,
+            "infostele": true
+        },
+        {
+            "code": 200,
+            "time": 1,
+            "type": 1,
+            "infostele": true
+        },
+        {
+            "code": 500,
+            "time": 1,
+            "type": 1,
+            "infostele": true
+        },
+        {
+            "code": 701,
+            "time": 1,
+            "type": 1,
+            "infostele": true
+        },
+        {
+            "code": 351,
+            "time": 1,
+            "type": 1,
+            "infostele": true
+        },
+        {
+            "code": 403,
+            "time": 1,
+            "type": 1,
+            "infostele": true
+        },
+        {
+            "code": 700,
+            "time": 1,
+            "type": 2,
+            "infostele": true
+        },
+        {
+            "code": 800,
+            "time": 1,
+            "type": 2,
+            "infostele": true
+        },
+        {
+            "code": 400,
+            "time": 1,
+            "type": 2,
+            "infostele": true
+        },
+        {
+            "code": 650,
+            "time": 1,
+            "type": 2,
+            "infostele": true
+        },
+        {
+            "code": 350,
+            "time": 1,
+            "type": 1,
+            "infostele": true
+        },
+        {
+            "code": 851,
+            "time": 1,
+            "type": 3,
+            "infostele": true
+        },
+        {
+            "code": 404,
+            "time": 1,
+            "type": 3,
+            "infostele": true
+        },
+        {
+            "code": 100,
+            "time": 1,
+            "type": 3,
+            "infostele": true
+        },
+        {
+            "code": 550,
+            "time": 1,
+            "type": 3,
+            "infostele": true
+        },
+        {
+            "code": 201,
+            "time": 1,
+            "type": 3,
+            "infostele": true
+        },
+        {
+            "code": 900,
+            "time": 1,
+            "type": 3,
+            "infostele": true
+        },
+        {
+            "code": 202,
+            "time": 1,
+            "type": 3,
+            "infostele": true
+        },
+        {
+            "code": 102,
+            "time": 1,
+            "type": 3,
+            "infostele": true
+        }
+    ]
+}

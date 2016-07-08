@@ -1,0 +1,16 @@
+{
+  "name": "europapark-waittimes",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "trigg3r",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.14.1",
+    "moment-timezone": "^0.5.4",
+    "request": "^2.72.0"
+  }
+}
