@@ -1,5 +1,7 @@
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize('waittimes', 'waittimes', 'waittimes');
+var express = require('express');
+var app = express();
 
 var request = require('request');
 var crypto = require('crypto');
@@ -19,8 +21,6 @@ var mode = "test";
 var time = moment.tz('Europe/Berlin');
 var dateString = time.format('YYYYMMDDHHmm');
 var code = crypto.createHash('md5').update('Europa-Park' + dateString + 'SecondTry').digest('hex');
-
-console.log(dateString);
 
 var parameters = {
     code: code,
@@ -47,7 +47,6 @@ if (mode === "test") {
 }
 
 function loaded(result) {
-
     var json = (typeof result !== 'object') ? JSON.parse(result) : result;
     var jsonString = JSON.stringify(json, null, 4);
 
@@ -57,7 +56,6 @@ function loaded(result) {
         var result = json.results[i];
         saveResult(result);
     }
-
 }
 
 function saveResult(result){
@@ -68,3 +66,13 @@ function saveResult(result){
         });
     });
 }
+
+app.get('/results', function (req, res) {
+    Waittime.all().then(function(times){
+        res.send(JSON.stringify(times));
+    });
+});
+
+app.listen(3000, function () {
+    console.log('Example app listening on port 3000!');
+});
