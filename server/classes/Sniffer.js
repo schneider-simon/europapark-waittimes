@@ -2,10 +2,10 @@ var request = require('request');
 var moment = require('moment');
 var Hasher = require('./Hasher');
 var momentTimezone = require('moment-timezone');
-var mockWaitTimes = require('././waittimes.json');
+var mockWaitTimes = require('./../data/waittimes.json');
 var fs = require('fs');
-var models = require("././models");
-var database = require('././database');
+var models = require("./../domain/models");
+var database = require('./../services/database');
 
 module.exports = class Sniffer {
     constructor(mode) {
