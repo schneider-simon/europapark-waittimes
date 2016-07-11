@@ -27,7 +27,6 @@ class Rides {
     importWaitingTimes(waitingTimes) {
         for(var i in this.list){
             var ride = this.list[i];
-            console.log('clear ride ' + ride.name());
             ride.clearWaitingTimes();
         }
         
