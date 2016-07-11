@@ -6,7 +6,7 @@ var config = require('config');
 var express = require('express');
 var Sniffer = require("./classes/Sniffer");
 var models = require("./domain/models");
-var rides = require("./services/rides2");
+var rides = require("./services/rides");
 var moment = require('moment');
 
 
