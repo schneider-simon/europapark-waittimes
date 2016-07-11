@@ -10,4 +10,12 @@ module.exports = class Ride {
         this.waitingTimes.add(waitingTime);
     }
 
+    clearWaitingTimes(){
+        this.waitingTimes = new WaitingTimes();
+    }
+    
+    name(){
+        return this.information.headline;
+    }
+
 }
