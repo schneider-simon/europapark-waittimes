@@ -6,7 +6,7 @@ export default class API {
     }
 
     waitingTimes() {
-        return this.json('http://europapark-waittimes.dev/data/mock/mockWaitingTimes.json');
+        return this.json('data/mock/mockWaitingTimes.json');
     }
 
     json(url) {

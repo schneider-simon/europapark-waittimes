@@ -1,3 +1,5 @@
+import WaitingTimes from "./WaitingTimes";
+
 export default class Ride {
     constructor(id, information, waitingTimes) {
         this.id = id;
@@ -5,11 +7,25 @@ export default class Ride {
         this.waitingTimes = waitingTimes;
     }
 
+    name(){
+        return this.information.headline;
+    }
+
+    color(){
+        return this.information.color;
+    }
+
+
+
     static fromData(data) {
         return new Ride(
             data.id,
             data.information,
-            data.waitingTimes
+            new WaitingTimes(data.waitingTimes.list)
         );
+    }
+    
+    waitingTimesData(){
+        return this.waitingTimes.data();
     }
 }

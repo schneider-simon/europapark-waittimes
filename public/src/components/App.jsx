@@ -16,13 +16,11 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        console.log('componentDidMount');
 
         this.api = new Api();
 
         this.api.waitingTimes().then(json => {
             const rides = Rides.fromData(json);
-
             this.setState({rides});
         });
     }

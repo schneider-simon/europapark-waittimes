@@ -1,4 +1,6 @@
 var config = require('config');
+var process = require('process');
+process.env.TZ = 'Europe/Berlin';
 
 var express = require('express');
 var models = require("./domain/models");
