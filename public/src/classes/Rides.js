@@ -29,6 +29,11 @@ export default class Rides {
         return data;
     }
 
+
+    map(callback){
+        return _.map(_.values(this.list), callback);
+    }
+    
     get(id){
         return this.list[id];
     }

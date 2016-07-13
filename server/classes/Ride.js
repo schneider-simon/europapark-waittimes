@@ -4,6 +4,7 @@ module.exports = class Ride {
     constructor(information) {
         this.information = information;
         this.waitingTimes = new WaitingTimes();
+        this.id = this.information.location_id;
     }
 
     addWaitingTime(waitingTime) {

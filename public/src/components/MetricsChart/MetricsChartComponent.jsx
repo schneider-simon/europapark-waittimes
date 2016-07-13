@@ -6,11 +6,8 @@ export default class MetricsChartComponent extends React.Component {
     }
     
     render(){
-        this.props.draw();
-
         return (
             <div id={this.props.id}>
-
             </div>
         );
     }

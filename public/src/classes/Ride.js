@@ -15,8 +15,6 @@ export default class Ride {
         return this.information.color;
     }
 
-
-
     static fromData(data) {
         return new Ride(
             data.id,

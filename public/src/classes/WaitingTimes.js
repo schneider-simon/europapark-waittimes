@@ -5,7 +5,7 @@ export default class WaitingTimes {
         this.list = list;
     }
 
-    data(key){
+    data(){
         const data = [];
 
         let currentDay = -1;

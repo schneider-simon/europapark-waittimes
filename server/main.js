@@ -20,7 +20,7 @@ app.get('/api/current_waitingtimes.json', function (req, res) {
         rides.importWaitingTimes(waitTimes);
 
         res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(rides.list));
+        res.send(JSON.stringify(rides.data()));
     });
 });
 

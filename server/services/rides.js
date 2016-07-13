@@ -1,6 +1,7 @@
 var Ride = require('./../classes/Ride');
 var locationsData = require('./../data/locations.json').locations;
 var mappingFile = require('./../data/waittime_location_mapping.json');
+var _ = require('lodash');
 
 class Rides {
     constructor() {
@@ -39,6 +40,28 @@ class Rides {
 
     findByKey(parcPlanKey) {
         return this.list[parcPlanKey];
+    }
+
+    data(){
+        let data = {};
+
+        for(var i in this.list){
+            const ride = this.list[i];
+            let rideData = {};
+
+            rideData.id = ride.id;
+            rideData.information = ride.information;
+            rideData.waitTimes = ride.waitingTimes.list.map(function(waitingTime){
+               return {
+                   date: waitingTime.createdAt,
+                   minutes: waitingTime.minutes
+               };
+            });
+
+            data[ride.id] = rideData;
+        }
+
+        return data;
     }
 
 

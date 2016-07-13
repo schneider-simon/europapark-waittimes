@@ -3,6 +3,7 @@ import Api from './../services/Api';
 import Rides from './../classes/Rides';
 import _ from 'lodash';
 import RidesChart from './Rides/RidesChart.jsx';
+import RideCharts from './Rides/RideCharts.jsx';
 
 
 export default class App extends React.Component {
@@ -29,7 +30,7 @@ export default class App extends React.Component {
 
         return (
             <div className="app">
-                <RidesChart rides={this.state.rides} />
+                <RideCharts rides={this.state.rides} />
 
             </div>
         );
