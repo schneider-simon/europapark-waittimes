@@ -1,4 +1,5 @@
 var LiveReloadPlugin = require('webpack-livereload-plugin');
+var path = require('path');
 
 module.exports = {
     entry: './public/src/main.js',
@@ -11,6 +12,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
+                exclude: path.resolve(__dirname, "node_modules"),
                 query: {
                     presets: ['es2015', 'react']
                 }

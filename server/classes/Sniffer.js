@@ -61,10 +61,14 @@ module.exports = class Sniffer {
     }
 
     saveResult(result) {
+        if(result.time === '-'){
+            result.time = 0;
+        }
+
         database.sync().then(() => {
             return models.waitTime.create({
                 park_plan_code: result.code,
-                minutes: result.time
+                minutes: parseInt(result.time, 10)
             });
         });
     }
