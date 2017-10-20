@@ -80,7 +80,9 @@ module.exports = class Sniffer {
         database.sync().then(() => {
             return models.waitTime.create({
                 park_plan_code: result.code,
-                minutes: parseInt(result.time, 10)
+                minutes: parseInt(result.time, 10),
+                type: parseInt(result.type, 10),
+                status: parseInt(result.status, 10),
             });
         });
     }
