@@ -2,3 +2,4 @@
 /server/config/default.json
 npm-debug.log
 /public/dist/bundle.js
+.idea

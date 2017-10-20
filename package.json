@@ -12,6 +12,7 @@
   "dependencies": {
     "config": "^1.21.0",
     "express": "^4.14.0",
+    "jquery": "^3.2.1",
     "lodash": "^4.13.1",
     "metrics-graphics": "^2.9.0",
     "moment": "^2.14.1",

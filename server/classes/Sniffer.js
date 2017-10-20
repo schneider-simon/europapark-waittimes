@@ -1,16 +1,18 @@
 var request = require('request');
 var moment = require('moment');
+const crypto = require('crypto')
 var Hasher = require('./Hasher');
 var momentTimezone = require('moment-timezone');
 var mockWaitTimes = require('./../data/waittimes.json');
 var fs = require('fs');
 var models = require("./../domain/models");
 var database = require('./../services/database');
+var config = require('config');
 
 module.exports = class Sniffer {
     constructor(mode) {
         this.mode = (mode) ? mode : 'test';
-        this.url = 'https://apps.europapark.de/webservices/waittimes/index.php';
+        this.url = config.get("waitingTimesBaseUrl")
     }
 
     run() {
@@ -20,7 +22,15 @@ module.exports = class Sniffer {
             return;
         }
 
-        let parameters = Sniffer.createParameters();
+        const secretKey = config.get('secretKey')
+        const dateTimeString = moment().utc().format("YYYYMMDDHH")
+
+        const hash = crypto.createHmac('sha256', secretKey)
+            .update(dateTimeString)
+            .digest('hex')
+            .toUpperCase();
+
+        let parameters = {token: hash}
 
         console.log('Calling: ' + this.url + '?' + Sniffer.encodeQueryData(parameters));
 
@@ -34,6 +44,7 @@ module.exports = class Sniffer {
                 return;
             }
 
+
             this.loaded(response.body);
         });
     }
@@ -43,25 +54,26 @@ module.exports = class Sniffer {
         var code = Hasher.buildCode();
 
         return {
-            code: code,
+            token: code,
             v: 4,
             base: time.format('X')
         };
     }
 
     loaded(result) {
-        var json = (typeof result !== 'object') ? JSON.parse(result) : result;
-        var jsonString = JSON.stringify(json, null, 4);
+        var results = (typeof result !== 'object') ? JSON.parse(result) : result;
+        var jsonString = JSON.stringify(results, null, 4);
         fs.writeFile("./data/fetched/wait-times_" + moment().format('YYYY-MM-DD-HH-mm-ss') + '.json', jsonString);
 
-        for (var i in json.results) {
-            var result = json.results[i];
+        for (var i in results) {
+            var result = results[i];
             this.saveResult(result);
         }
     }
 
     saveResult(result) {
-        if(result.time === '-'){
+        console.log(result)
+        if (result.time === '-') {
             result.time = 0;
         }
 
@@ -75,8 +87,9 @@ module.exports = class Sniffer {
 
     static encodeQueryData(data) {
         var ret = [];
-        for (var d in data)
+        for (var d in data) {
             ret.push(encodeURIComponent(d) + "=" + encodeURIComponent(data[d]));
+        }
         return ret.join("&");
     }
 
@@ -86,7 +99,7 @@ module.exports = class Sniffer {
             "User-Agent": "Mozilla/5.0 (Linux; Android 6.0.1; D5803 Build/23.5.A.0.575; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/51.0.2704.81 Mobile Safari/537.36",
             "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
             "Accept": "*/*",
-            "Accept-Encoding": "gzip, deflate",
+            "Accept-Encoding": "deflate",
             "Accept-Language": "de-DE,en-US;q=0.8"
         }
     }
