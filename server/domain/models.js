@@ -10,7 +10,6 @@ module.exports = {
     }),
     weather: database.define('weather', {
         date: Sequelize.DATE,
-        data: Sequelize.JSON,
         temperature: Sequelize.FLOAT,
         precipitation: Sequelize.FLOAT,
         description: Sequelize.STRING,
