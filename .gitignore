@@ -3,3 +3,4 @@
 npm-debug.log
 /public/dist/bundle.js
 .idea
+/server/data/fetched/*.json
